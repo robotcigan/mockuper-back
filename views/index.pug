@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+  .wrapper
+    h1 some
+    p {{some}}
+    //- img(src="./img/1.jpg", alt="")
+    section.section
+      .container
+        .col.col--sm-4(v-for="(mockup, index) in mockups" v-bind:key="mockup.id")
+          a(v-bind:href="'/mockups/' + mockup._id").mockup
+            .mockup__img
+              img(v-bind:src="mockup.thumbnail", alt="")
+            //- p {{index}}
+            .tags.mockup__tags
+              .tag(v-for="tag in mockup.tags") {{tag}}
+            .mockup__name {{mockup.shortName}}

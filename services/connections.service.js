@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mockups');
+mongoose.connect('mongodb://localhost/mockups', {useNewUrlParser: true, useUnifiedTopology: true});
 
 mongoose.Promise = global.Promise;
 
